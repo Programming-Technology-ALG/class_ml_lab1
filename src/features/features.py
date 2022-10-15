@@ -1,4 +1,5 @@
 import pandas as pd
+import src.config as cfg
 
 
 def add_early_wakeup(df)-> pd.DataFrame:
