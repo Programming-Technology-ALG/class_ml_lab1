@@ -28,7 +28,7 @@ def cast_types(df: pd.DataFrame) -> pd.DataFrame:
 def set_idx(df: pd.DataFrame, idx_col: str) -> pd.DataFrame:
     df = df.set_index(idx_col)
     return df
-    
+
 
 def preprocess_data(df: pd.DataFrame) -> pd.DataFrame:
     df = set_idx(df, cfg.ID_COL)
@@ -43,6 +43,6 @@ def preprocess_target(df: pd.DataFrame) -> pd.DataFrame:
     return df
 
 
-def extract_target(df: pd.DataFrame) -> tuple[pd.DataFrame, pd.DataFrame]:
+def extract_target(df: pd.DataFrame):# -> tuple(pd.DataFrame, pd.DataFrame):
     df, target = df.drop(cfg.TARGET_COLS, axis=1), df[cfg.TARGET_COLS]
     return df, target

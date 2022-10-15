@@ -1,10 +1,13 @@
 # -*- coding: utf-8 -*-
+import sys
+sys.path.append('..')
+
 import click
 import logging
 from pathlib import Path
 from dotenv import find_dotenv, load_dotenv
 from src.utils import save_as_pickle
-from preprocess import preprocess_data, preprocess_target, extract_target
+from src.data.preprocess import preprocess_data, preprocess_target, extract_target
 import pandas as pd
 
 
@@ -26,6 +29,9 @@ def main(input_filepath, output_data_filepath, output_target_filepath=None):
         target = preprocess_target(target)
         save_as_pickle(target, output_target_filepath)
     save_as_pickle(df, output_data_filepath)
+    logger.info(f'Target saved to {output_target_filepath}')
+    logger.info(f'Dataset saved to {output_data_filepath}')
+
 
 if __name__ == '__main__':
     log_fmt = '%(asctime)s - %(name)s - %(levelname)s - %(message)s'
