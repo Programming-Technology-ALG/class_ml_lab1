@@ -4,7 +4,7 @@ RAW_DATA_PATH = 'data/raw/'
 PROCESSED_DATA_PATH = 'data/processed/'
 PROCESSED_TARGET_PATH = 'data/processed/'
 
-
+RANDOM_STATE=42
 
 # COLS
 TARGET_COLS = ['Артериальная гипертензия', 'ОНМК', 'Стенокардия, ИБС, инфаркт миокарда', 'Сердечная недостаточность', 'Прочие заболевания сердца']

@@ -16,7 +16,7 @@ def fill_sex(df: pd.DataFrame) -> pd.DataFrame:
 
 
 def cast_types(df: pd.DataFrame) -> pd.DataFrame:
-    df[cfg.CAT_COLS] = df[cfg.CAT_COLS].astype('category')
+    df[cfg.CAT_COLS] = df[cfg.CAT_COLS].astype('object')
 
     ohe_int_cols = df[cfg.OHE_COLS].select_dtypes('number').columns
     df[ohe_int_cols] = df[ohe_int_cols].astype(np.int8)
