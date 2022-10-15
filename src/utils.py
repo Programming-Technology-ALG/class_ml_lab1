@@ -28,6 +28,14 @@ def load_model(path: str):
     return pickle.load(open(path, 'rb'))
 
 
+def save_encoder(encoder, path: str) -> None:
+    pickle.dump(encoder, open(path, 'wb'))
+
+
+def load_encoder(path: str):
+    return pickle.load(open(path, 'rb'))
+
+
 real_pipe = Pipeline([
     ('impute', SimpleImputer(strategy='median')),
     ('scaler',  StandardScaler())
