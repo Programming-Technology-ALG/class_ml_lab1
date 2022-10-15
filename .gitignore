@@ -87,3 +87,5 @@ target/
 
 # Mypy cache
 .mypy_cache/
+notebooks/catboost_info
+notebooks/.ipynb_checkpoints

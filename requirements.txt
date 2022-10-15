@@ -7,4 +7,5 @@ Sphinx
 coverage
 awscli
 flake8
+catboost
 python-dotenv>=0.5.1

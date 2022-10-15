@@ -1,5 +1,6 @@
 # PATH
 RAW_PATH = 'data/raw/'
+
 RAW_DATA_PATH = 'data/raw/'
 PROCESSED_DATA_PATH = 'data/processed/'
 PROCESSED_TARGET_PATH = 'data/processed/'
