@@ -1,0 +1,28 @@
+schema: '2.0'
+stages:
+  preprocess data:
+    cmd: python3 src/data/make_dataset.py --input_filepath=data/raw/train.csv --output_data_filepath=data/processed/train_data.pkl
+      --output_target_filepath=data/processed/target_data.pkl
+    deps:
+    - path: data/raw
+      md5: 0def10324c18f52e76cde31f61a12e7f.dir
+      size: 663790
+      nfiles: 4
+    outs:
+    - path: data/processed
+      md5: 32a7e072f35fe9874806fdf15cfbb385.dir
+      size: 300072
+      nfiles: 7
+  feature_generating:
+    cmd: python3 src/features/build_features.py --input_filepath=data/processed/train.pkl
+      --output_data_filepath=data/interim/train.pkl
+    deps:
+    - path: data/processed
+      md5: 32a7e072f35fe9874806fdf15cfbb385.dir
+      size: 300072
+      nfiles: 7
+    outs:
+    - path: data/interim
+      md5: 9ba97052e058f15bf8833fbc3f3073d8.dir
+      size: 2707999
+      nfiles: 4

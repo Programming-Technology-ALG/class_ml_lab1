@@ -1,5 +1,4 @@
 import pandas as pd
-import src.config as cfg
 from numpy import NaN
 
 
