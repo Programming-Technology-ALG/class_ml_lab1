@@ -37,7 +37,7 @@ def load_encoder(path: str):
 
 
 real_pipe = Pipeline([
-    ('impute', SimpleImputer(strategy='median')),
+    ('impute', SimpleImputer(strategy='constant', fill_value=0)),
     ('scaler',  StandardScaler())
 ])
 

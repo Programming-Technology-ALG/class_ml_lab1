@@ -36,9 +36,9 @@ def main(input_filepath, output_data_filepath, input_target_filepath=".", output
     else:
         df = pd.read_csv(input_filepath)
         df = preprocess_data(df)
+        df, target = extract_target(df)
         save_as_pickle(df, output_data_filepath)
         if output_target_filepath:
-            df, target = extract_target(df)
             target = preprocess_target(target)
             save_as_pickle(target, output_target_filepath)
     
