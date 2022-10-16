@@ -1,5 +1,4 @@
 import pickle
-from re import A
 from typing import Union
 from pandas import DataFrame
 from pandas.core.indexes.base import Index as PandasIndex
